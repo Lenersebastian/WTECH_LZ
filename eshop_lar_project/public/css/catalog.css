@@ -1,0 +1,360 @@
+.body {
+    --radius: 8px;
+    --border: 4px;
+    --height: 48px;
+    --speed: 0.25s;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+  
+  .tabs {
+    height: var(--height);
+    display: grid;
+    grid-auto-flow: column;
+    background: hsl(0 0% 0%);
+    border-radius: var(--radius);
+    grid-auto-columns: 1fr;
+    position: relative;
+    border: var(--border) solid hsl(0 0% 0%);
+  }
+  
+  .tabs {
+    --ease: linear(
+      0,
+      0.1641 3.52%,
+      0.311 7.18%,
+      0.4413 10.99%,
+      0.5553 14.96%,
+      0.6539 19.12%,
+      0.738 23.5%,
+      0.8086 28.15%,
+      0.8662 33.12%,
+      0.9078 37.92%,
+      0.9405 43.12%,
+      0.965 48.84%,
+      0.9821 55.28%,
+      0.992 61.97%,
+      0.9976 70.09%,
+      1
+    );
+  }
+  
+  .tabs > .input,
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  .tabs:has(:checked:nth-of-type(1)) {
+    --active: 0;
+  }
+  .tabs:has(:checked:nth-of-type(2)) {
+    --active: 1;
+  }
+  .tabs:has(:checked:nth-of-type(3)) {
+    --active: 2;
+  }
+  .tabs:has(:checked:nth-of-type(4)) {
+    --active: 3;
+  }
+  
+  .tabs :checked + .label {
+    --highlight: 1;
+  }
+  
+  .tabs:has(.input:nth-of-type(2)) {
+    --count: 2;
+  }
+  .tabs:has(.input:nth-of-type(3)) {
+    --count: 3;
+  }
+  .tabs:has(.input:nth-of-type(4)) {
+    --count: 4;
+  }
+  
+  .tabs .label {
+    padding: 0 clamp(10px, 10px + 10px, 20px);
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    display: grid;
+    border-radius: calc(var(--radius) - var(--border));
+    place-items: center;
+    color: hsl(0 0% 100% / calc(0.5 + var(--highlight, 0)));
+    transition: background, color;
+    transition-duration: 0.25s;
+    transition-timing-function: var(--ease, ease);
+  }
+  
+  .input:not(:checked) + .label:hover {
+    --highlight: 0.35;
+    background: hsl(0 0% 20%);
+  }
+  
+  .tabs::after {
+    pointer-events: none;
+    content: "";
+    width: calc(100% / var(--count));
+    height: 100%;
+    background: hsl(0 0% 100%);
+    position: absolute;
+    border-radius: calc(var(--radius) - var(--border));
+    mix-blend-mode: difference;
+    translate: calc(var(--active, 0) * 100%) 0;
+    transition: translate, outline-color;
+    transition-duration: var(--speed);
+    transition-timing-function: var(--ease, ease);
+    outline: 2px solid transparent;
+  }
+  
+  .tabs:has(:focus-visible)::after {
+    outline-color: red;
+  }
+  
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #787777;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a img {
+    width: 30px;
+    height: 30px;
+}
+
+.catalog {
+    max-width: 800px;
+    margin: auto;
+    background: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 5px;
+    cursor: pointer
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+}
+
+.product {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.navigation {
+    margin-top: 20px;
+    text-align: center; /* Align navigation buttons at the center */
+}
+
+.nav-button {
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 20px;
+}
+
+button {
+    appearance: button;
+    background-color: black;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    outline: none;
+    overflow: visible;
+    padding: 13px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+button:after {
+    background-clip: padding-box;
+    background-color: black;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+button:main,
+button:focus {
+    user-select: auto;
+}
+
+button:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+button:disabled {
+    cursor: auto;
+}
+
+button:active:after {
+    border-width: 0 0 0px;
+}
+
+button:active {
+    padding-bottom: 10px;
+}
+
+.negative-img {
+    margin-top: 5px;
+    margin-bottom: -5px;
+    filter: invert(100%);
+    width: 25px;
+    height: 25px;
+}
+
+#slider-container {
+    margin: 20px;
+}
+
+#min-price,
+#max-price {
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+}
+
+#price-slider .noUi-connect {
+    background: black; /* Change the background color between handles to black */
+}
+
+
+.clear {
+  clear: both;
+}
+
+.checkBox {
+  display: block;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 2px black;
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.checkBox div {
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  top: -52px;
+  left: -52px;
+  position: absolute;
+  transform: rotateZ(45deg);
+  z-index: 100;
+}
+
+.checkBox input[type=checkbox]:checked + div {
+  left: -10px;
+  top: -10px;
+}
+
+.checkBox input[type=checkbox] {
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+}
+
+.transition {
+  transition: 300ms ease;
+}
+
+.checkbox-text {
+  margin-left: 5px; /* Adjust margin as needed */
+  font-size: 15px; /* Adjust font size as needed */
+}
+
+.content {
+  display: flex;
+  align-items: center; /* Vertically center items */
+}
+
+
+.product {
+  position: relative; /* Ensure the product item is a positioned container for absolute positioning */
+}
+
+.sale-image {
+  position: absolute; /* Position the sale image absolutely relative to the product item */
+  top: 0; /* Adjust top position as needed */
+  right: 0; /* Adjust right position as needed */
+  width: 80px !important;
+  height: 80px !important;
+}
+
