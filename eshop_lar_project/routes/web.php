@@ -40,7 +40,7 @@ Route::get('/main_page', function () {
 
 Route::get('/admin_main', function () {
     return view('admin_main');
-})->name('admin_page');
+})->name('admin_main');
 
  Route::get('/product', function () {
      return view('product');
@@ -50,6 +50,8 @@ Route::get('/admin_main', function () {
 
 
 Route::get('/catalog/products', [ProductController::class, 'getAllProducts']);
+
+// Route::post('/admin/products', [ProductController::class, 'store'])->name('admin.products.store');
 
 
 Route::middleware('auth')->group(function () {

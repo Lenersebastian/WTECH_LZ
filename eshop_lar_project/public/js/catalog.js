@@ -31,7 +31,7 @@ function createFilteredProducts() {
 
     productsData.forEach((product) => {
         // Check if the sale checkbox is checked and if the product has a sale greater than 0
-        if ((!saleCheckbox.checked || (saleCheckbox.checked && product.sale > 0)) &&
+        if ((!saleCheckbox.checked || (saleCheckbox.checked && product['sale_%'] > 0)) &&
             product.price >= minPriceValue && product.price <= maxPriceValue) {
             filteredProducts.push(product);
         }
@@ -95,8 +95,8 @@ function generateProductItems() {
             let priceDisplay = `${product.price}$`; // Default price display
 
             // If the product has a sale, calculate the discounted price and display it along with the original price
-            if (product.sale > 0) {
-                const discountedPrice = product.price - (product.price * product.sale / 100);
+            if (product['sale_%'] > 0) {
+                const discountedPrice = (product.price - (product.price * product['sale_%'] / 100)).toFixed(2);
                 priceDisplay = `<span style="text-decoration: line-through;">${product.price}$</span> <span style="color: orange;">${discountedPrice}$</span>`;
                 // Add the sale.png image to the product item
                 const saleImage = document.createElement('img');

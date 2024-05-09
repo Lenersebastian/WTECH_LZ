@@ -24,8 +24,7 @@ class ProductSeeder extends Seeder
                 'name' => $faker->word,
                 'description' => $faker->paragraph,
                 'price' => $faker->numberBetween(10, 100),
-                'sale_price' => $faker->randomElement([$faker->numberBetween(5, 50), 0]),
-                'status' => $faker->randomElement(['in stock', 'out of stock', 'delivery expected soon']),
+                'sale_%' => $faker->randomElement([$faker->numberBetween(5, 90), 0]),
                 'availability' => $faker->numberBetween(1, 100),
                 'image_path' => $faker->imageUrl(), // Generates a random image URL
                 'created_at' => $faker->dateTimeBetween('-1 year', 'now'),

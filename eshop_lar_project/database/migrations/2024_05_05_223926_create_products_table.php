@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->bigInteger('price');
-            $table->bigInteger('sale_price')->nullable;
-            $table->enum('status', ['in stock', 'out of stock', 'delivery expected soon']);
+            $table->bigInteger('sale_%')->nullable;
             $table->bigInteger('availability');
             $table->string('image_path')->nullable(); // Store the path to the image file
             $table->timestamps();

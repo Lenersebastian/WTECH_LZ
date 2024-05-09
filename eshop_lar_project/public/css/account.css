@@ -65,6 +65,7 @@ button:active:after {
 button:active {
     padding-bottom: 10px;
 }
+
 .input-group-left {
     float: left;
     margin-right: 2%; /* Adjust the margin to create space between the groups */
