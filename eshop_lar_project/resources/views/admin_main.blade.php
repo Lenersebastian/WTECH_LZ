@@ -80,6 +80,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
   <script src="{{ asset('js/admin_main.js') }}"></script>
+  <script src="{{ asset('js/catalog.js') }}"></script>
 </body>
 
 </html>

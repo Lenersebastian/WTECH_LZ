@@ -46,7 +46,7 @@ Route::get('/admin_main', function () {
      return view('product');
  })->name('product');
 
-Route::get('/product/{productName}', 'ProductController@show')->name('product.show');
+ Route::get('/product/{productName}', [ProductController::class, 'show'])->name('product.show');
 
 
 Route::get('/catalog/products', [ProductController::class, 'getAllProducts']);

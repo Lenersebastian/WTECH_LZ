@@ -20,9 +20,10 @@
     <div class="product-info">
         <!-- resources/views/product.blade.php -->
 <h1>{{ $product->name }}</h1>
-<img src="{{ $product->image }}" alt="{{ $product->name }}">
+<img id="productImage" src="{{ $product->image }}" alt="{{ $product->name }}" onerror="this.onerror=null; this.src='{{ asset('images/error_image.png') }}';">
 <p>Price: ${{ $product->price }}</p>
-<!-- Add any other product details you want to display -->
+<p>Description: {{ $product->description }}</p>
+
 
         <button onclick="addToCart()">Add to Cart</button>
     </div>

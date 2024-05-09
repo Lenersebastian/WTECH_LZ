@@ -20,7 +20,7 @@ const maxPrice = document.getElementById('max-price');
 // Function to open product page with additional information
 function openProductPage(productName, productImage, productPrice) {
     // Here you can redirect to product.html and pass the product name as a parameter
-    window.location.href = `product.html?product=${productName}&image=${productImage}&price=${productPrice}`;
+    window.location.href = `/product/${productName}?image=${productImage}&price=${productPrice}`;
 }
 
 function createFilteredProducts() {
