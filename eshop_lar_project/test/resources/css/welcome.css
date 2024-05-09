@@ -1,0 +1,129 @@
+.main-content {
+    text-align: center;
+    margin-top: 20vh; /* Adjust this value as needed for vertical centering */
+}
+
+button {
+    appearance: button;
+    background-color: black;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin-top: 0.8rem;
+    outline: none;
+    overflow: visible;
+    padding: 13px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+button:after {
+    background-clip: padding-box;
+    background-color: black;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+button:main,
+button:focus {
+    user-select: auto;
+}
+
+button:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+
+button:disabled {
+    cursor: auto;
+}
+
+button:active:after {
+    border-width: 0 0 0px;
+}
+
+button:active {
+    padding-bottom: 10px;
+}
+
+.label {
+    display: block;
+    margin-bottom: .3rem;
+    margin-top: .5rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #05060f99;
+    transition: color .3s cubic-bezier(.25, .01, .25, 1) 0s;
+}
+
+.input:hover,
+.input:focus {
+    outline: none;
+    border-color: #05060f;
+}
+
+.input-group:hover .label,
+.input:focus {
+    color: #05060fc2;
+}
+
+/* Target the input that follows the label */
+.label:hover+.input {
+    outline: none;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    font-family: 'Gordita';
+    font-size: 4rem;
+    margin-top: 10vh;
+}
+
+p {
+    text-align: center;
+    color: black;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #787777;
+    overflow: hidden;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
